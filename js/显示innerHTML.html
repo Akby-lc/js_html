@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击Div，显示其innerHTML</title>
+    <style>
+        body {
+            font: 12px/1.5 Tahoma;
+        }
+
+        #outer {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #outer div {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-indent: 2em;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="outer">
+        <div>
+            <strong>点这里呀</strong>你好啊
+        </div>
+        <div>
+            干杯！
+        </div>
+        <div>
+            吃我一锤
+        </div>
+        <div>
+            阿门里
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var oDiv = document.getElementById("outer").getElementsByTagName("div");
+        for (var i = 0; i < oDiv.length; i++) {
+            oDiv[i].onclick = function () {
+                alert(this.innerHTML)
+            }
+        }
+    }
+</script>
+</html>
